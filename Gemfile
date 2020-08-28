@@ -33,7 +33,13 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
+group :development do 
+   gem 'sqlite3', '~> 1.3.6'    #gem to use in development environment
+end
 
+group :production do 
+  gem 'pg'         #gem to use in production environment
+end
 
 
 group :development do
