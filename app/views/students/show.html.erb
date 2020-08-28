@@ -1,18 +1,54 @@
+<style>
+body {
+  background-color: lightblue;
+  
+}
+
+h1 {
+  color:blue ;
+  alignment: center;
+  font-family: New Century Schoolbook, TeX Gyre Scholafo, serif;
+  left-margin: 40px;
+}
+h2 {
+    color:blue ;
+    alignment: center;
+    font-family: New Century Schoolbook, TeX Gyre Scholafo, serif;
+    left-margin: 40px;
+  }
+
+.btn{
+  background-color: #008CBA;
+  border: white;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+.tex{
+    color:blue ;
+    font-family: New Century Schoolbook, TeX Gyre Scholafo, serif;
+
+}
+</style>
 <h1><%= @student.name%>'s Page</h1>
 
 <h2>Age: <%=@student.age%></h2>
 
 <h2>Courses</h2>
-<%= button_to "Register Course", new_enrollment_path, method: :get%>
+<%= button_to "Register Course", new_enrollment_path, method: :get, class: 'btn' %>
 <ul>
     <%@student.enrollments.each do |enrollment|%>
         <li> <%= enrollment.course.name%></li>
-        <%= button_to " Drop Enrollment", enrollment_path(enrollment), method: :delete%>
+        <%= button_to " Drop Enrollment", enrollment_path(enrollment), method: :delete, class: 'btn'%>
     <%end%>
 </ul>
 
-<%= button_to " Edit Student", edit_student_path, method: :get%>
-<%= button_to " Destroy Student", edit_student_path, method: :delete%>
+<%= button_to " Edit Student", edit_student_path, method: :get, class: 'btn'%>
+<br>
+<%= button_to " Destroy Student", edit_student_path, method: :delete, class: 'btn'%>
 
 <%= link_to " Destroy Student", student_path%>
 
