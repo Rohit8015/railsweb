@@ -1,0 +1,40 @@
+<style>
+body {
+  background-color: lightblue;
+  
+}
+
+h1 {
+  color:blue ;
+  alignment: center;
+  font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+  left-margin: 40px;
+}
+ul {
+    list-style-type: circle;
+    color:blue;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    left-margin: 50px;
+  }
+.btn{
+  background-color: #008CBA;
+  border: white;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+</style>
+<h1> Students Index </h1>
+
+<%= button_to "Add New Student", new_student_path, method: :get, class:'btn'  %>
+<ul>
+    <%= @students.each do |student| %>
+       <li><strong><%= link_to student.name, student_path(student)%></strong></li>
+    <%end%>
+
+</ul>
+

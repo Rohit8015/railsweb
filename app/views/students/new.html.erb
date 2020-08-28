@@ -1,0 +1,45 @@
+<style>
+body {
+  background-color: lightblue;
+  
+}
+
+h1 {
+  color:blue ;
+  alignment: center;
+  font-family: New Century Schoolbook, TeX Gyre Scholafo, serif;
+  left-margin: 40px;
+}
+
+.btn{
+  background-color: #008CBA;
+  border: white;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+.tex{
+    color:blue ;
+    font-family: New Century Schoolbook, TeX Gyre Scholafo, serif;
+
+}
+</style>
+<h1>Students New Form</h1>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error|%>
+        <p style="colour: red"><%= error%></p>
+    <%end%>
+<%end%>
+
+<%= form_for @Student do |f|%>
+    <%= f.label :name, class: 'tex' %>
+    <%= f.text_field :name %>
+    <%= f.label :age, class: 'tex' %>
+    <%= f.number_field :age %>
+
+    <%= f.submit%>
+<% end%>
