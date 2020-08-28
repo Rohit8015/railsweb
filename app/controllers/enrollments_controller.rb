@@ -1,5 +1,6 @@
 class EnrollmentsController < ApplicationController
   def index
+    
   end
 
   def new
@@ -8,7 +9,7 @@ class EnrollmentsController < ApplicationController
 
   def create
     @enrollment= Enrollment.create(params.require(:enrollment).permit(:course_id, :student_id))
-    redirect_to student_path(enrollment.student)
+    redirect_to student_path(@enrollment.student)
   end
 
   def destroy
