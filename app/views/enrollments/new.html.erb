@@ -63,5 +63,5 @@ h1 {
     <%= f.collection_select :course_id, Course.all, :id, :name%>
     <%= f.label :student_id, class: 'tex'%>
     <%= f.collection_select :student_id, Student.all, :id, :name%>
-    <%= f.submit class: 'bttn'%>
+    <%= f.submit%>
 <%end%>
