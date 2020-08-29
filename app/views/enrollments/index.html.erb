@@ -1,6 +1,50 @@
+<style>
+body {
+  background-color: lightblue;
+  
+}
+
+h1 {
+  vertical-align: top;
+	background-color: #D9E7F8;
+	color: #000080;
+	font-weight: 600;
+	margin-top: 5px;
+	margin-left: 20px;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 15px 25px;
+}
+}
+
+.btn{
+  background-color: #008CBA;
+  border: white;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+.tex{
+    color:blue ;
+    font-family: New Century Schoolbook, TeX Gyre Scholafo, serif;
+    margin-left: 20px;
+
+}
+.btn {
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+</style>
 <h1> Enrollments Page</h1>
 
-<%= button_to "Add New Enrollment", new_enrollment_path, method: :get  %>
+<%= button_to "Add New Enrollment", new_enrollment_path, method: :get, class:'btn'   %>
 <ul>
     <%= @enrollments.each do |enrollment| %>
        <li><%= link_to enrollment.id, enrollment_path(enrollment)%></li>

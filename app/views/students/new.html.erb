@@ -41,6 +41,25 @@ h1 {
   background-color: #4CAF50; /* Green */
   color: white;
 }
+
+.bttn{
+  background-color: #008CBA;
+  border: white;
+  color: white;
+  padding: 4px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+.bttn {
+  transition-duration: 0.4s;
+}
+
+.bttn:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
 </style>
 <h1>Students New Form</h1>
 
@@ -56,5 +75,5 @@ h1 {
     <%= f.label :age, class: 'tex' %>
     <%= f.number_field :age %>
 
-    <%= f.submit%>
+    <%= f.submit% class:'bttn' >
 <% end%>
