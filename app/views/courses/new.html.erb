@@ -1,0 +1,57 @@
+<style>
+body {
+  background-color: lightblue;
+  
+}
+
+h1 {
+  vertical-align: top;
+	background-color: #D9E7F8;
+	color: #000080;
+	font-weight: 600;
+	margin-top: 5px;
+	margin-left: 20px;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 15px 25px;
+}
+}
+
+.btn{
+  background-color: #008CBA;
+  border: white;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+.tex{
+    color:blue ;
+    font-family: New Century Schoolbook, TeX Gyre Scholafo, serif;
+    margin-left: 20px;
+
+}
+.btn {
+  transition-duration: 0.4s;
+}
+
+.btn:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+</style>
+<h1>Courses New Form</h1>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error|%>
+        <p style="colour: red"><%= error%></p>
+    <%end%>
+<%end%>
+
+<%= form_for @course do |f|%>
+    <%= f.label :name, class: 'tex' %>
+    <%= f.text_field :name %>
+    <%= f.submit%>
+<% end%>
